@@ -24,13 +24,13 @@ Namespace ImplementCustomUserBasedOnExistingClassEF.Win
             End If
             args.ObjectSpaceProviders.Add(New NonPersistentObjectSpaceProvider(TypesInfo, Nothing))
         End Sub
-        Private Sub ImplementCustomUserBasedOnExistingClassEFWinApp_CustomizeLanguagesList(ByVal sender As Object, ByVal e As CustomizeLanguagesListEventArgs) Handles MyBase.CustomizeLanguagesList
+        Private Sub ImplementCustomUserBasedOnExistingClassEFWinApp_CustomizeLanguagesList(ByVal sender As Object, ByVal e As CustomizeLanguagesListEventArgs) Handles Me.CustomizeLanguagesList
             Dim userLanguageName As String = System.Threading.Thread.CurrentThread.CurrentUICulture.Name
             If userLanguageName <> "en-US" AndAlso e.Languages.IndexOf(userLanguageName) = -1 Then
                 e.Languages.Add(userLanguageName)
             End If
         End Sub
-        Private Sub ImplementCustomUserBasedOnExistingClassEFWinApp_DatabaseVersionMismatch(ByVal sender As Object, ByVal e As DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs) Handles MyBase.DatabaseVersionMismatch
+        Private Sub ImplementCustomUserBasedOnExistingClassEFWinApp_DatabaseVersionMismatch(ByVal sender As Object, ByVal e As DevExpress.ExpressApp.DatabaseVersionMismatchEventArgs) Handles Me.DatabaseVersionMismatch
 #If EASYTEST Then
             e.Updater.Update()
             e.Handled = True
