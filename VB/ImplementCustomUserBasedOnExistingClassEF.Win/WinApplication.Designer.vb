@@ -34,7 +34,7 @@ Namespace ImplementCustomUserBasedOnExistingClassEF.Win
             Me.validationModule = New DevExpress.ExpressApp.Validation.ValidationModule()
             Me.validationWindowsFormsModule = New DevExpress.ExpressApp.Validation.Win.ValidationWindowsFormsModule()
             Me.authenticationStandard1 = New DevExpress.ExpressApp.Security.AuthenticationStandard()
-            CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
+            DirectCast(Me, System.ComponentModel.ISupportInitialize).BeginInit()
             ' 
             ' securityStrategyComplex1
             ' 
@@ -66,7 +66,7 @@ Namespace ImplementCustomUserBasedOnExistingClassEF.Win
             Me.Modules.Add(Me.validationWindowsFormsModule)
             Me.UseOldTemplates = False
 
-            CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
+            DirectCast(Me, System.ComponentModel.ISupportInitialize).EndInit()
 
         End Sub
 
