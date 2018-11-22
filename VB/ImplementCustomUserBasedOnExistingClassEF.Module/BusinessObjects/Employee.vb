@@ -27,19 +27,29 @@ Namespace ImplementCustomUserBasedOnExistingClassEF.Module.BusinessObjects
 
         #Region "ISecurityUser Members"
         <RuleRequiredField("EmployeeUserNameRequired", DefaultContexts.Save), RuleUniqueValue("EmployeeUserNameIsUnique", DefaultContexts.Save, "The login with the entered user name was already registered within the system.")> _
-        Public Property UserName() As String
+        Public Property UserName() As String Implements IAuthenticationActiveDirectoryUser.UserName
         Public Property IsActive() As Boolean
-        #End Region
+        Private ReadOnly Property UserNameInternal() As String Implements ISecurityUser.UserName, IAuthenticationStandardUser.UserName
+            Get
+                Return UserName
+            End Get
+        End Property
+        Private ReadOnly Property IsActiveInternal() As Boolean Implements ISecurityUser.IsActive
+            Get
+                Return IsActive
+            End Get
+        End Property
+#End Region
 
         #Region "IAuthenticationStandartUser Members"
-        Public Property ChangePasswordOnFirstLogon() As Boolean
+        Public Property ChangePasswordOnFirstLogon() As Boolean Implements IAuthenticationStandardUser.ChangePasswordOnFirstLogon
         <Browsable(False), SecurityBrowsable> _
         Public Property StoredPassword() As String
         Private Function IAuthenticationStandardUser_ComparePassword(ByVal password As String) As Boolean Implements IAuthenticationStandardUser.ComparePassword
             Dim passwordCryptographer As New PasswordCryptographer()
             Return passwordCryptographer.AreEqual(StoredPassword, password)
         End Function
-        Public Sub SetPassword(ByVal password As String)
+        Public Sub SetPassword(ByVal password As String) Implements IAuthenticationStandardUser.SetPassword
             Dim passwordCryptographer As New PasswordCryptographer()
             StoredPassword = passwordCryptographer.GenerateSaltedPassword(password)
         End Sub
