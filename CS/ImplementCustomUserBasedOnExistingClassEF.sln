@@ -2,11 +2,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplementCustomUserBasedOnExistingClassEF.Win", "ImplementCustomUserBasedOnExistingClassEF.Win\ImplementCustomUserBasedOnExistingClassEF.Win.csproj", "{D05D93DF-312D-4D4E-B980-726871EC7833}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplementCustomUserBasedOnExistingClassEF.Module", "ImplementCustomUserBasedOnExistingClassEF.Module\ImplementCustomUserBasedOnExistingClassEF.Module.csproj", "{5F15837D-D1E5-44DC-92F0-4F2EBE9C3F8D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplementCustomUserBasedOnExistingClassEF.Module.Win", "ImplementCustomUserBasedOnExistingClassEF.Module.Win\ImplementCustomUserBasedOnExistingClassEF.Module.Win.csproj", "{7964F87D-BC5D-4C4E-8B2F-71E89739AA97}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImplementCustomUserBasedOnExistingClassEF.Win", "ImplementCustomUserBasedOnExistingClassEF.Win\ImplementCustomUserBasedOnExistingClassEF.Win.csproj", "{D05D93DF-312D-4D4E-B980-726871EC7833}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
